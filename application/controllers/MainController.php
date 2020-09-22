@@ -18,9 +18,12 @@ class MainController extends CI_Controller
         $this->load->view('Main',$data);
     }
 
-    public function Dry()
+    public function Disease()
     {
-        $this->load->view('drycoach'); 
+
+        $data['disease'] = $this->CompanyModel->getDisease($_GET['id']);
+
+        $this->load->view('disease',$data);
     }
 
 }

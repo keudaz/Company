@@ -27,7 +27,7 @@
 <!-- Portfolio Gallery Grid -->
 <div class="row">
     <?php foreach($Recommendation as $row){
-        echo '<a href="drycoach">
+        echo '<a href="'.base_url().'disease?id='.$row->id.'">
                   <div class="column people">
                     <div class="content">
                     <img src="'.base_url().'assets/images/'.$row->image.'" alt="Car" style="width:100%; height: 300px;">

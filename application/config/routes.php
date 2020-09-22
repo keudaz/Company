@@ -55,8 +55,8 @@ $route['404_override'] = '';
 
 
 $route['main']['GET'] = 'MainController/Main';
-$route['drycoach']['GET'] = 'MainController/Dry';
+$route['disease']['GET'] = 'MainController/Disease';
 
 $route['main']['POST'] = 'MainController/Main';
-$route['drycoach']['POST'] = 'MainController/Dry';
+$route['disease']['POST'] = 'MainController/Disease';
 

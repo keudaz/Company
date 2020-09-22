@@ -31,17 +31,18 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LearningMS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/application" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Company\application" />
+      <recent name="C:\xampp\htdocs\Company" />
       <recent name="C:\xampp\htdocs\Company\application\libraries" />
       <recent name="C:\xampp\htdocs\Company\public" />
       <recent name="C:\xampp\htdocs\Company\public\js" />
-      <recent name="C:\xampp\htdocs\Company\public\css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -92,7 +93,7 @@
       <workItem from="1600581290127" duration="833000" />
       <workItem from="1600583024124" duration="847000" />
       <workItem from="1600777176046" duration="606000" />
-      <workItem from="1600788038928" duration="2473000" />
+      <workItem from="1600788038928" duration="5543000" />
     </task>
     <task id="LOCAL-00001" summary="register form and styling">
       <created>1562710830295</created>
