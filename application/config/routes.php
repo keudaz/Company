@@ -49,31 +49,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'Register';
+$route['default_controller'] = 'MainController/Main';
 $route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
-
-
-$route['register']['GET'] = 'CompanyController/Register';
-$route['register']['POST'] = 'CompanyController/Register';
-
-$route['login']['GET'] = 'CompanyController/login';
-$route['login-check']['POST'] = 'CompanyController/check_login';
-$route['logout']['GET'] = 'CompanyController/logout';
-
-$route['employee-list']['GET'] = 'CompanyController/EmployeeList';
-$route['edit-employee']['GET'] = 'CompanyController/edit_empoyee';
-
-$route['table_data']['GET'] = 'CompanyController/table_data';
-$route['table_data']['POST'] = 'CompanyController/table_data';
-
-$route['tablelist_data']['POST'] = 'CompanyController/tablelist_data';
 
 
 
-$route['save-employee']['POST'] = 'CompanyController/savedata';
-$route['delete-employee']['POST'] = 'CompanyController/delete_employee';
+$route['main']['GET'] = 'MainController/Main';
+$route['drycoach']['GET'] = 'MainController/Dry';
 
+$route['main']['POST'] = 'MainController/Main';
+$route['drycoach']['POST'] = 'MainController/Dry';
 
-$route['employee-list'] = 'CompanyController/EmployeeList';
-$route['employee-list/(:num)']['GET'] = 'CompanyController/EmployeeList/$1';
