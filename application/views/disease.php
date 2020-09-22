@@ -52,7 +52,7 @@
               </div>
               <div class="test">
                 <div class="content">
-                <img src="'.base_url().'assets/images/'.$row->image_1.'" alt="Nature" style="width:100%; height: 400px;">
+                <img src="'.base_url().'assets/images/'.$row->image_2.'" alt="Nature" style="width:100%; height: 400px;">
                 </div>
               </div>
               
