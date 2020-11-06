@@ -56,7 +56,14 @@ $route['404_override'] = '';
 
 $route['main']['GET'] = 'MainController/Main';
 $route['disease']['GET'] = 'MainController/Disease';
+$route['login']['GET'] = 'MainController/login';
+$route['register']['GET'] = 'MainController/register';
+$route['logout']['GET'] = 'MainController/logout';
 
 $route['main']['POST'] = 'MainController/Main';
 $route['disease']['POST'] = 'MainController/Disease';
+$route['register_data']['POST'] = 'MainController/register_data';
+$route['login_data']['POST'] = 'MainController/login_data';
+$route['comment_1']['POST'] = 'MainController/comment_1';
+$route['comment_2']['POST'] = 'MainController/comment_2';
 

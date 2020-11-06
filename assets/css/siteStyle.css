@@ -5,7 +5,6 @@
 
 body {
     background-color: #f1f1f1;
-    padding: 20px;
     font-family: Arial;
 }
 
@@ -20,13 +19,13 @@ h1 {
     word-break: break-all;
 }
 
-.row {
+.rowz {
     margin: 10px -16px;
 }
 
 /* Add padding BETWEEN each column */
-.row,
-.row > .column {
+.rowz,
+.rowz > .column {
     padding: 8px;
 }
 
@@ -38,14 +37,14 @@ h1 {
 }
 
 /* Clear floats after rows */
-.row:after {
+.rowz:after {
     content: "";
     display: table;
     clear: both;
 }
 
 /* Content */
-.content {
+.contentz {
     background-color: white;
     padding: 10px;
 }
