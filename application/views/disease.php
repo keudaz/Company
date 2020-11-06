@@ -119,10 +119,7 @@
                                 </div>';
         if($row->email==$_SESSION['email']){
             echo '<div class="action">
-                                    <button type="button" class="btn btn-success btn-xs" title="Edit">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                    <button type="button" class="btn btn-danger btn-xs" title="Delete" onclick="delete_comment('.$row->c_id.')">
                                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </button>
                                 </div>';
@@ -135,7 +132,8 @@
             </div>
         </div>
     </div>';
-    }} ?>
+    }
+} ?>
                       <br>
                         <br>
                     </div>
@@ -174,8 +172,12 @@
                         <input type="text" name="comment" class="form-control" style="width: 85%" placeholder="Enter Comment">
                         <button type="submit" style="margin-left: 10px" class="btn btn-primary">Submit</button>
                       </div>
-                    </form>
-    <div class="row">
+                    </form>';
+} ?>
+
+<?php foreach ($comment as $row) {
+    if ($row->type==2) {
+        echo '<div class="row">
         <div class="panel panel-default widget col-12">
             <div class="panel-heading">
                 <span class="glyphicon glyphicon-comment"></span>
@@ -191,27 +193,29 @@
                             <div class="col-xs-1 col-md-11">
                                 <div>
                                     <div class="mic-info">
-                                        By: <a href="#">Bhaumik Patel</a> on 2 Aug 2013
+                                        By: <a href="#">'.$row->fname.' '.$row->lname.'</a> on '.$row->c_date.'
                                     </div>
                                 </div>
                                 <div class="comment-text">
-                                    Awesome design
-                                </div>
-                                <div class="action">
-                                    <button type="button" class="btn btn-success btn-xs" title="Edit">
-                                        <i class="fa fa-pencil" aria-hidden="true"></i>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                    '.$row->comment.'
+                                </div>';
+        if($row->email==$_SESSION['email']){
+            echo '<div class="action">
+                                    <button type="button" class="btn btn-danger btn-xs" title="Delete" onclick="delete_comment('.$row->c_id.')">
                                         <i class="fa fa-trash-o" aria-hidden="true"></i>
                                     </button>
-                                </div>
+                                </div>';
+        } echo '
+                                
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>';
+    }
+} ?>
                   <br>
                     <br>
                 </div>
@@ -222,12 +226,44 @@
             </div>
             
             <!-- END MAIN -->
-            </div>';
-} ?>
+            </div>
+
 </div>
 </body>
 </html>
 <script>
+
+    function delete_comment(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                $.ajax({
+                    type: "POST",
+                    url: "<?php echo base_url('delete_comment') ?>",
+                    data: {'id': id},
+                    dataType: "json",
+                    success: function (data) {
+                        Swal.fire(
+                            'Deleted!',
+                            'Your comment has been deleted.',
+                            'success'
+                        );
+                        location.reload();
+                    },
+                    failure: function (errMsg) {
+                        alert('Error');
+                    }
+                });
+            }
+        });
+    }
 
     $(document).ready(function () {
 

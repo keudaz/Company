@@ -66,4 +66,5 @@ $route['register_data']['POST'] = 'MainController/register_data';
 $route['login_data']['POST'] = 'MainController/login_data';
 $route['comment_1']['POST'] = 'MainController/comment_1';
 $route['comment_2']['POST'] = 'MainController/comment_2';
+$route['delete_comment']['POST'] = 'MainController/delete_comment';
 

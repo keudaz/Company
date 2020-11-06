@@ -24,7 +24,7 @@ class CompanyModel extends CI_Model
 
     public function getComment(){
 
-        $query =$this->db->query("SELECT *, c.date as 'c_date' FROM comment c , users u where  u.email=c.user");
+        $query =$this->db->query("SELECT *, c.date as 'c_date' , c.id as 'c_id' FROM comment c , users u where  u.email=c.user");
 
         return $query->result();
 
@@ -112,6 +112,14 @@ class CompanyModel extends CI_Model
         $this->db->insert('comment',$data);
 
         return "success";
+
+    }
+
+    public function delete_comment($id){
+
+        $this->db->where('id',$id);
+
+        return $this->db->delete('comment');
 
     }
 

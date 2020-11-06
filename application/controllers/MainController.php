@@ -93,4 +93,12 @@ class MainController extends CI_Controller
         }
     }
 
+    public function delete_comment(){
+
+        $this->CompanyModel->delete_comment($_POST['id']);
+
+        echo json_encode("Success");
+
+    }
+
 }
